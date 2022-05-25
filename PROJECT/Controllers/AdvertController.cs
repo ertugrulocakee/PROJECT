@@ -40,7 +40,9 @@ namespace PROJECT.Controllers
 
                 advert.detailLink = htmlDocument.DocumentNode.SelectNodes("//ul[@class='vitrin-list clearfix']//li//a").ElementAt(i).GetAttributeValue("href", "test123test.com");
 
-                advert.detailLink = "https://www.sahibinden.com" + advert.detailLink;    
+                advert.detailLink = "https://www.sahibinden.com" + advert.detailLink;
+
+                advert.price = GetPrice.Price(advert.detailLink);
 
                 adverts.Add(advert);
 
